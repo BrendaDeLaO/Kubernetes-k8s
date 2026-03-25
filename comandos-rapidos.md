@@ -7,7 +7,7 @@ minikube start
 # 2. Ver el nodo
 kubectl get nodes
 
-# 3. Crear pod individual
+# 3. Crear pod con aplicación de nginx
 kubectl run web-nginx --image=nginx
 
 # 4. Ver el pod
@@ -38,7 +38,6 @@ kubectl get all
 kubectl port-forward service/web-deployment 8080:80
 ```
 
-Abre el navegador en: http://localhost:8080
 
 ---
 
@@ -51,7 +50,7 @@ kubectl delete service web-deployment
 # Eliminar el deployment
 kubectl delete deployment web-deployment
 
-# Eliminar el pod individual
+# Eliminar el pod 
 kubectl delete pod web-nginx
 
 # Verificar que no queda nada
@@ -64,4 +63,3 @@ minikube stop
 minikube delete
 ```
 
-> Después de `minikube delete` necesitas correr `minikube start` para volver a empezar desde cero.
